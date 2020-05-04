@@ -18,13 +18,6 @@ def fbin_book(coppia):
     file=r.text
     return json.loads(file)
 
-def fbin_scambi24H(coppia,limite):
-    coppia=coppia.upper()
-    indirizzo='https://fapi.binance.com/fapi/v1/depth?symbol='+coppia+'&limit='+limite
-    r=requests.get(indirizzo)
-    file=r.text
-    return json.loads(file)
-
 def fbin_candlestick(coppia,intervallo,limite):
     coppia=coppia.upper()
     indirizzo='https://fapi.binance.com/fapi/v1/klines?symbol='+coppia+'&interval='+intervallo+'&limit='+limite
